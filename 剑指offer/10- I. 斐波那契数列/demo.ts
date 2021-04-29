@@ -30,13 +30,10 @@
 function fib(n: number) {
   let a = 0,
     b = 1;
-  if (n === 0) {
-    return a;
-  }
-  for (let i = 1; i < n; i++) {
+  for (let i = 0; i < n; i++) {
     [a, b] = [b, (a + b) % 1000000007];
   }
-  return b;
+  return a;
 }
 
 /**
