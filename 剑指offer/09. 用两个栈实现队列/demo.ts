@@ -1,7 +1,7 @@
 /**
  * 第一次尝试
  */
-// class CQueue {
+// export class CQueue {
 //   arr: number[];
 //   constructor() {
 //     this.arr = [];
@@ -24,7 +24,7 @@
 /**
  * 第二次尝试
  */
-// class CQueueNode {
+// export class CQueueNode {
 //   val?: number | string;
 //   point?: CQueueNode;
 //   constructor(val?: number, point?: CQueueNode) {
@@ -62,25 +62,25 @@
 /**
  * 第三次尝试
  */
-class CQueue {
-    enter: number[]
-  leave: Array<number | undefined>
+export class CQueue {
+  enter: number[];
+  leave: Array<number | undefined>;
   constructor() {
-    this.enter = []
-    this.leave = []
+    this.enter = [];
+    this.leave = [];
   }
 
   appendTail(value: number): void {
-    this.enter.push(value)
+    this.enter.push(value);
   }
 
   deleteHead(): number {
     if (!this.leave.length) {
       while (this.enter.length) {
-        this.leave.push(this.enter.pop())
+        this.leave.push(this.enter.pop());
       }
     }
-    return <number>this.leave.pop() || -1
+    return <number>this.leave.pop() || -1;
   }
 }
 

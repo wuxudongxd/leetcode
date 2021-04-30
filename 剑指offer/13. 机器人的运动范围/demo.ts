@@ -2,7 +2,7 @@
  * 第一次尝试
  * 没有考虑格子的遮挡影响，比标准答案的格子数码多
  */
-// function movingCount(m: number, n: number, k: number): number {
+// export function movingCount(m: number, n: number, k: number): number {
 //   let sum = 0;
 //   const arr: boolean[][] = new Array(m);
 //   for (let i = 0; i < m; i++) {
@@ -36,7 +36,7 @@
 /**
  * DFS+剪枝
  */
-// const movingCount = (m: number, n: number, k: number): number => {
+// export const movingCount = (m: number, n: number, k: number): number => {
 //   let grid = [...Array(m)].map(() => Array(n).fill(0));
 //   const canWalk = (x: number, y: number) => {
 //     if (x < 0 || x === m || y < 0 || y === n || grid[x][y]) return false;
@@ -64,7 +64,7 @@
 /**
  * BFS
  */
-const movingCount = (m: number, n: number, k: number): number => {
+export const movingCount = (m: number, n: number, k: number): number => {
   function getSum(num: number) {
     let answer = 0;
 

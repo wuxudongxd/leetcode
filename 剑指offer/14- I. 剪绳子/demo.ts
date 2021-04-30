@@ -1,1 +1,3 @@
-function cuttingRope(n: number): number {}
+export function cuttingRope(n: number): number {
+  return 0;
+}

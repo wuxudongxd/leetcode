@@ -1,4 +1,4 @@
-function findRepeatNumber(nums: number[]): number {
+export function findRepeatNumber(nums: number[]): number {
   for (let i = 0; i < nums.length; i++) {
     while (i !== nums[i]) {
       if (nums[i] === nums[nums[i]]) {

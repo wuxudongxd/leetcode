@@ -1,4 +1,4 @@
-class TreeNode {
+export class TreeNode {
   val: number;
   left: TreeNode | null;
   right: TreeNode | null;
@@ -9,7 +9,10 @@ class TreeNode {
   }
 }
 
-function buildTree(preorder: number[], inorder: number[]): TreeNode | null {
+export function buildTree(
+  preorder: number[],
+  inorder: number[]
+): TreeNode | null {
   // root是前序遍历中根节点的索引，即每个子树的第一个值；left是中序遍历中子树的最左边节点的坐标，right是中序遍历中子树的最右边节点的坐标
   var process = (root: number, left: number, right: number) => {
     if (left > right) return null;
