@@ -3,7 +3,7 @@
  * 要寻找的target首先需要要大于内部数组的第一个值，且在满足条件的一维数组中需要小于数组的最后一个值
  * 通过上边的判断条件缩小范围，然后遍历一维数组的每一项
  */
-// function findNumberIn2DArray(matrix: number[][], target: number): boolean {
+// export function findNumberIn2DArray(matrix: number[][], target: number): boolean {
 //   for (let i = 0; i < matrix.length; i++) {
 //     if (target >= matrix[i][0]) {
 //       if (target <= matrix[i][matrix[i].length - 1]) {
@@ -24,7 +24,10 @@
  * 第二次尝试
  * 参考剑指offer书，以右上角为参照点，target比右上角小则target不可能在最右侧一列，踢除之；target比右上角大则踢除最上边一行
  */
-function findNumberIn2DArray(matrix: number[][], target: number): boolean {
+export function findNumberIn2DArray(
+  matrix: number[][],
+  target: number
+): boolean {
   if (matrix.length > 0) {
     const rows = matrix.length;
     const columns = matrix[0].length;

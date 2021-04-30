@@ -1,4 +1,4 @@
-function removeDuplicates(nums: number[]): number {
+export function removeDuplicates(nums: number[]): number {
   // first
   // for (let i = 0; i < nums.length; i++) {
   //   for (let j = i - 1; j >= 0; j--) {
@@ -22,7 +22,7 @@ function removeDuplicates(nums: number[]): number {
       i--;
     }
   }
-  
+
   console.log(nums);
   console.log(nums.length);
 

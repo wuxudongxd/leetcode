@@ -2,7 +2,7 @@
  * 第一次尝试
  * 普通递归————超时
  */
-// function fib(n: number): number {
+// export function fib(n: number): number {
 //   if (n === 0 || n === 1) {
 //     return n;
 //   }
@@ -13,10 +13,10 @@
  * 尾递归
  */
 // // 基础框架
-// function fib(n: number) {
+// export function fib(n: number) {
 //   return fibImpl(0, 1, n);
 // } // 执行递归
-// function fibImpl(a: number, b: number, n: number):number {
+// export function fibImpl(a: number, b: number, n: number):number {
 //   if (n === 0) {
 //     return a;
 //   }
@@ -27,7 +27,7 @@
 /**
  * 普通循环
  */
-function fib(n: number) {
+export function fib(n: number) {
   let a = 0,
     b = 1;
   for (let i = 0; i < n; i++) {

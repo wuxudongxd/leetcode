@@ -1,4 +1,4 @@
-class ListNode {
+export class ListNode {
   val: number;
   next: ListNode | null;
   constructor(val?: number, next?: ListNode | null) {
@@ -9,7 +9,7 @@ class ListNode {
 /**
  * 存入数组然后逆序输出
  */
-// function reversePrint(head: ListNode | null): number[] {
+// export function reversePrint(head: ListNode | null): number[] {
 //   let stk = [];
 //   while (head) {
 //     stk.push(head.val);
@@ -20,16 +20,15 @@ class ListNode {
 //   return stk.reverse();
 // }
 
-function reversePrint(head: ListNode | null): number[] {
-    let nums = [];
-    let node = head;
-    while (node !== null) {
-      nums.unshift(node.val);
-      node = node.next;
-    }
-    return nums;
+export function reversePrint(head: ListNode | null): number[] {
+  let nums = [];
+  let node = head;
+  while (node !== null) {
+    nums.unshift(node.val);
+    node = node.next;
+  }
+  return nums;
 }
-
 
 /**
  * 测试部分
@@ -37,4 +36,4 @@ function reversePrint(head: ListNode | null): number[] {
 const head1 = new ListNode(1);
 const head2 = new ListNode(3, head1);
 const head3 = new ListNode(2, head2);
-reversePrint(head3)
+reversePrint(head3);
