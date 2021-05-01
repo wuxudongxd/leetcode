@@ -47,3 +47,21 @@ export function printNode(head: ListNode | null): void {
     }
   }
 }
+
+/**
+ * 链表的反转
+ * @param head 链表的头结点
+ * @returns 反转后链表的头结点，输入的head结点在反转后处在链表末尾，next指向null
+ */
+export function reverse(head: ListNode | null): ListNode | null {
+  let pre: ListNode | null = null,
+    cur: ListNode | null = head,
+    next: ListNode | null = null;
+  while (cur !== null) {
+    next = cur.next;
+    cur.next = pre;
+    pre = cur;
+    cur = next;
+  }
+  return pre;
+}
