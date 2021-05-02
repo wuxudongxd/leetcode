@@ -1,4 +1,4 @@
-class Node {
+export class Node {
   val: number;
   left: Node | null;
   right: Node | null;
