@@ -1,4 +1,4 @@
-import { TreeNode } from "../../../../utils/binaryTree"
+import { TreeNode } from "../../binaryTree"
 
 let sum = 0;
 function convertBST(root: TreeNode | null): TreeNode | null {

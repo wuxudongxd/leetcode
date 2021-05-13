@@ -1,13 +1,6 @@
-export class ListNode {
-  val: number;
-  next: ListNode | null;
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.next = next === undefined ? null : next;
-  }
-}
+import { ListNode } from "../linkedList";
 
-let successor: ListNode | null = new ListNode();
+export let successor: ListNode | null = new ListNode();
 
 export function reverseN(head: ListNode, n: number): ListNode {
   if (n === 1) {

@@ -1,4 +1,4 @@
-import { TreeNode } from "../../../../utils/binaryTree"
+import { TreeNode } from "../../binaryTree"
 
 function deleteNode(root: TreeNode | null, key: number): TreeNode | null {
     if (root === null) return null;

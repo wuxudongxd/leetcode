@@ -1,4 +1,4 @@
-import { TreeNode } from "../../../../utils/binaryTree"
+import { TreeNode } from "../../binaryTree"
 
 function kthSmallest(root: TreeNode | null, k: number): number {
     const arr = inOrder(root)

@@ -1,4 +1,4 @@
-import { TreeNode } from "../../../utils/binaryTree"
+import { TreeNode } from "../binaryTree"
 
 function findDuplicateSubtrees(root: TreeNode | null): Array<TreeNode | null> {
     let res: Array<TreeNode | null> = new Array()

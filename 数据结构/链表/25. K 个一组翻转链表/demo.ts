@@ -1,4 +1,4 @@
-import { ListNode, createNode, printNode } from "../../../utils/linkedList";
+import { ListNode, createNode, printNode } from "../linkedList";
 /**
  * 分组遍历节点
  */

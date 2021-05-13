@@ -1,4 +1,4 @@
-import { TreeNode } from "../../../utils/binaryTree"
+import { TreeNode } from "../binaryTree"
 
 export function buildTree(inorder: number[], postorder: number[]): TreeNode | null {
     return build(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1)

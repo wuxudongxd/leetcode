@@ -1,4 +1,4 @@
-import { TreeNode } from "../../../utils/binaryTree"
+import { TreeNode } from "../binaryTree"
 
 /**
  * 判断 BST 的合法性

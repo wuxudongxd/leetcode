@@ -9,7 +9,7 @@
  *     }
  * }
  */
-import { ListNode, createNode } from "../../../utils/linkedList";
+import { ListNode, createNode } from "../linkedList";
 
 /**
  * 借助数组
