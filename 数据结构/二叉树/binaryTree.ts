@@ -64,5 +64,5 @@ export function createTreeNode(arr: (number | null)[]): TreeNode | null {
  * 测试部分
  */
 let arr: (number | null)[] = [40, 20, 60, 10, 30, 50, 70, null, null, 25]
-console.log(createTreeNode(arr));
+// console.log(createTreeNode(arr));
 
