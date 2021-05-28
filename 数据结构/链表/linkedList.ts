@@ -49,7 +49,7 @@ export function printNode(head: ListNode | null): void {
 }
 
 /**
- * 链表的反转
+ * 链表的反转（迭代）
  * @param head 链表的头结点
  * @returns 反转后链表的头结点，输入的head结点在反转后处在链表末尾，next指向null
  */
@@ -64,4 +64,16 @@ export function reverse(head: ListNode | null): ListNode | null {
     cur = next;
   }
   return pre;
+}
+
+/**
+ * 链表的反转（递归）
+ * @param head
+ */
+export function reverseRecursion(head: ListNode | null): ListNode | null {
+  if (head === null || head.next === null) return head;
+  const last: ListNode | null = reverseRecursion(head.next);
+  head.next.next = head;
+  head.next = null;
+  return last;
 }
