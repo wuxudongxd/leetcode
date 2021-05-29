@@ -131,7 +131,7 @@ export function preorderTraversal(root: TreeNode | null): number[] {
 /**
  * 层序遍历
  */
-function levelOrder(root: TreeNode | null): number[][] {
+export function levelOrder(root: TreeNode | null): number[][] {
   if (!root) return [];
   let res: number[][] = [];
   let queue: TreeNode[] = [];
@@ -150,3 +150,25 @@ function levelOrder(root: TreeNode | null): number[][] {
   }
   return res;
 }
+
+
+/**
+ * "自顶向下"的伪代码(先序遍历)
+ */
+/*
+  1. return specific value for null node
+  2. update the answer if needed                      // answer <-- params
+  3. left_ans = top_down(root.left, left_params)		// left_params <-- root.val, params
+  4. right_ans = top_down(root.right, right_params)	// right_params <-- root.val, params
+  5. return the answer if needed                      // answer <-- left_ans, right_ans
+*/
+
+/**
+ * "自底向上"的伪代码(后序遍历)
+ */
+/* 
+  1. return specific value for null node
+  2. left_ans = bottom_up(root.left)			// call function recursively for left child
+  3. right_ans = bottom_up(root.right)		// call function recursively for right child
+  4. return answers                           // answer <-- left_ans, right_ans, root.val
+*/
