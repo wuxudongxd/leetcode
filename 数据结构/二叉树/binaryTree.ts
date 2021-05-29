@@ -20,30 +20,30 @@ export class TreeNode {
 export function createTreeNode(arr: (number | null)[]): TreeNode | null {
   let head: TreeNode | null = null;
   let node: TreeNode | null = null;
-  let queue: (TreeNode | null)[] = []
+  let queue: (TreeNode | null)[] = [];
 
-  if (arr[0] === null) return null
-  head = new TreeNode(arr[0])
-  queue.unshift(head)
+  if (arr[0] === null) return null;
+  head = new TreeNode(arr[0]);
+  queue.unshift(head);
 
   let i = 1;
-  while (true){
-    let curNode = queue.pop() as TreeNode
+  while (true) {
+    let curNode = queue.pop() as TreeNode;
 
     if (i >= arr.length) break;
     if (curNode.left === null) {
-      node = arrItemToNode(arr[i])
-      curNode.left = node
-      queue.unshift(node)
-      i++
+      node = arrItemToNode(arr[i]);
+      curNode.left = node;
+      queue.unshift(node);
+      i++;
     }
 
     if (i >= arr.length) break;
     if (curNode.right === null) {
-      node = arrItemToNode(arr[i])
-      curNode.right = node
-      queue.unshift(node)
-      i++
+      node = arrItemToNode(arr[i]);
+      curNode.right = node;
+      queue.unshift(node);
+      i++;
     }
   }
 
@@ -53,16 +53,100 @@ export function createTreeNode(arr: (number | null)[]): TreeNode | null {
     } else {
       node = new TreeNode(arrItem);
     }
-    return node
+    return node;
   }
 
   return head;
 }
 
+/**
+ * 二叉树递归遍历
+ */
+// 普通写法:前序遍历(中序和后序改变一下root.val的次序即可)
+// export function preorderTraversal(root: TreeNode | null): number[] {
+//   const res: number[] = [];
+//   const preOrder = (root: TreeNode | null):void => {
+//     if (root === null) return;
+//     res.push(root.val);
+//     preOrder(root.left);
+//     preOrder(root.right);
+//   };
+//   preOrder(root);
+//   return res;
+// }
+
+// ES6写法：前序遍历(中序和后序改变一下root.val的次序即可)
+// export function preorderTraversal(root: TreeNode | null): number[] {
+//   return root
+//     ? [
+//         root.val,
+//         ...preorderTraversal(root.left),
+//         ...preorderTraversal(root.right),
+//       ]
+//     : [];
+// }
 
 /**
- * 测试部分
+ * 二叉树迭代遍历(颜色标记法)
  */
-let arr: (number | null)[] = [40, 20, 60, 10, 30, 50, 70, null, null, 25]
-// console.log(createTreeNode(arr));
+export interface stackNode {
+  color: string;
+  node: TreeNode;
+}
 
+export function preorderTraversal(root: TreeNode | null): number[] {
+  const printArr: number[] = [];
+  if (!root) return printArr;
+  const stack: stackNode[] = [];
+  stack.push({
+    color: "white",
+    node: root,
+  });
+
+  while (stack.length > 0) {
+    const { color, node } = stack.pop() as stackNode;
+    if (color === "gray") {
+      printArr.push(node.val);
+    } else {
+      // 前序遍历
+      node.right && stack.push({ color: "white", node: node.right });
+      node.left && stack.push({ color: "white", node: node.left });
+      stack.push({ color: "gray", node });
+
+      // 中序遍历
+      // node.right && stack.push({ color: "white", node: node.right });
+      // stack.push({ color: "gray", node });
+      // node.left && stack.push({ color: "white", node: node.left });
+
+      // 后序遍历
+      // stack.push({ color: "gray", node });
+      // node.right && stack.push({ color: "white", node: node.right });
+      // node.left && stack.push({ color: "white", node: node.left });
+    }
+  }
+
+  return printArr;
+}
+
+/**
+ * 层序遍历
+ */
+function levelOrder(root: TreeNode | null): number[][] {
+  if (!root) return [];
+  let res: number[][] = [];
+  let queue: TreeNode[] = [];
+  queue.unshift(root);
+  while (queue.length !== 0) {
+    let n = queue.length;
+    let level: number[] = [];
+    while (n) {
+      let node: TreeNode = queue.pop() as TreeNode;
+      level.push(node.val);
+      node.left && queue.unshift(node.left);
+      node.right && queue.unshift(node.right);
+      n--;
+    }
+    res.push(level);
+  }
+  return res;
+}
