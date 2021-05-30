@@ -1,4 +1,4 @@
-function numTrees(n: number): number {
+export function numTrees(n: number): number {
     let memo: number[][] = new Array(n).fill(0).map(() => new Array(n).fill(0))
     return count(1, n);
 
