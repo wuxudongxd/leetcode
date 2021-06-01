@@ -1,4 +1,4 @@
-// import { ListNode } from "../linkedList";
+// import { ListNode } from "./linkedList";
 
 class ListNode {
   val: number;

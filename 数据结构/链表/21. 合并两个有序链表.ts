@@ -1,4 +1,4 @@
-import { ListNode, createNode } from "../linkedList";
+import { ListNode, createNode } from "./linkedList";
 
 export function mergeTwoLists(
   l1: ListNode | null,

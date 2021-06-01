@@ -1,4 +1,4 @@
-import { TreeNode } from "../binaryTree";
+import { TreeNode } from "./binaryTree";
 
 export function isSymmetric(root: TreeNode | null): boolean {
   const check = (left: TreeNode | null, right: TreeNode | null): boolean => {
@@ -23,8 +23,6 @@ export function isSymmetric(root: TreeNode | null): boolean {
   }
   return check(root.left, root.right); // 否则，判断它的左右子树是否满足对称
 }
-
-
 
 // export function isSymmetric(root: TreeNode | null): boolean {
 //   if (root == null) return true;

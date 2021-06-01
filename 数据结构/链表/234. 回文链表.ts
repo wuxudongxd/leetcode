@@ -1,4 +1,4 @@
-import { ListNode, createNode } from "../linkedList";
+import { ListNode, createNode } from "./linkedList";
 
 /**
  * 借助数组

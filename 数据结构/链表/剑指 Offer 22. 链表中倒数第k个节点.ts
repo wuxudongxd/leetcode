@@ -1,4 +1,4 @@
-import { ListNode, createNode } from "../linkedList";
+import { ListNode, createNode } from "./linkedList";
 
 // function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
 //   if (head === null || head.next === null) return null;
@@ -22,7 +22,10 @@ import { ListNode, createNode } from "../linkedList";
 let head = createNode([1, 2]);
 console.log(removeNthFromEnd(head, 2));
 
-export function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
+export function removeNthFromEnd(
+  head: ListNode | null,
+  n: number
+): ListNode | null {
   let slow = head,
     fast = head,
     last = null;

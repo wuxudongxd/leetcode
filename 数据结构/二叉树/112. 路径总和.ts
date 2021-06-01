@@ -1,4 +1,4 @@
-import { TreeNode } from "../binaryTree";
+import { TreeNode } from "./binaryTree";
 
 //DFS
 export function hasPathSum(root: TreeNode | null, targetSum: number): boolean {

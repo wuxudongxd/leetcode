@@ -1,4 +1,4 @@
-import { ListNode } from "../linkedList";
+import { ListNode } from "./linkedList";
 
 export let successor: ListNode | null = new ListNode();
 
@@ -21,7 +21,10 @@ export function reverseBetween(
   if (left === 1) {
     return reverseN(head as ListNode, right);
   }
-  (head as ListNode).next = reverseBetween((head as ListNode).next as ListNode, left - 1, right - 1);
+  (head as ListNode).next = reverseBetween(
+    (head as ListNode).next as ListNode,
+    left - 1,
+    right - 1
+  );
   return head;
 }
-

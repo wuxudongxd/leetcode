@@ -1,4 +1,4 @@
-import { TreeNode, createTreeNode } from "../binaryTree";
+import { TreeNode, createTreeNode } from "./binaryTree";
 
 /**
  * 递归解决：“自顶向下”思路

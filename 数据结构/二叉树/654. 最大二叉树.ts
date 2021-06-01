@@ -1,4 +1,4 @@
-import { TreeNode } from "../binaryTree"
+import { TreeNode } from "./binaryTree";
 
 export function constructMaximumBinaryTree(nums: number[]): TreeNode | null {
   return build(nums, 0, nums.length - 1);

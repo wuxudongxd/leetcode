@@ -1,5 +1,3 @@
-import {} from "../../binaryTree"
+import {} from "../binaryTree";
 
-function generateTrees(n: number): Array<TreeNode | null> {
-    
-};
+// function generateTrees(n: number): Array<TreeNode | null> {}
