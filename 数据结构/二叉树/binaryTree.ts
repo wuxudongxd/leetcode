@@ -18,44 +18,30 @@ export class TreeNode {
  * @returns 二叉树的头节点
  */
 export function createTreeNode(arr: (number | null)[]): TreeNode | null {
-  let head: TreeNode | null = null;
-  let node: TreeNode | null = null;
-  let queue: (TreeNode | null)[] = [];
-
-  if (arr[0] === null) return null;
-  head = new TreeNode(arr[0]);
-  queue.unshift(head);
-
-  let i = 1;
-  while (true) {
-    let curNode = queue.pop() as TreeNode;
-
-    if (i >= arr.length) break;
-    if (curNode.left === null) {
-      node = arrItemToNode(arr[i]);
-      curNode.left = node;
-      queue.unshift(node);
-      i++;
-    }
-
-    if (i >= arr.length) break;
-    if (curNode.right === null) {
-      node = arrItemToNode(arr[i]);
-      curNode.right = node;
-      queue.unshift(node);
-      i++;
-    }
-  }
-
-  function arrItemToNode(arrItem: number | null): TreeNode | null {
-    if (arrItem === null) {
-      node = null;
+  if (arr.length === 0 || arr[0] === null) return null;
+  let head: TreeNode = new TreeNode(arr.shift() as number);
+  let queue: (TreeNode | null)[] = [head];
+  while (queue.length) {
+    let node = queue.pop() as TreeNode;
+    let left: number | null = arr.shift() as number | null;
+    if (left !== null) {
+      let leftNode: TreeNode = new TreeNode(left);
+      queue.unshift(leftNode);
+      node.left = leftNode;
     } else {
-      node = new TreeNode(arrItem);
+      node.left = null;
     }
-    return node;
+    if (arr.length) {
+      let right: number | null = arr.shift() as number | null;
+      if (right !== null) {
+        let rightNode: TreeNode = new TreeNode(right);
+        queue.unshift(rightNode);
+        node.right = rightNode;
+      } else {
+        node.right = null;
+      }
+    }
   }
-
   return head;
 }
 
