@@ -1,17 +1,16 @@
 export function search(nums: number[], target: number): number {
-  if (nums.length === 0) return -1;
-  let low = 0,
-    high = nums.length - 1,
-    middle = nums.length / 2;
-  while (low < high) {
-    if (target > nums[middle]) {
-      low = middle;
-    } else if (target < nums[middle]) {
-      high = middle;
-    } else {
-      return middle;
+  let left = 0;
+  let right = nums.length - 1;
+
+  while (left <= right) {
+    let mid = Math.floor(left + (right - left) / 2);
+    if (nums[mid] === target) {
+      return mid;
+    } else if (nums[mid] < target) {
+      left = mid + 1;
+    } else if (nums[mid] > target) {
+      right = mid - 1;
     }
-    middle = Math.floor((low + high) / 2);
   }
   return -1;
 }
