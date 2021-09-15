@@ -1,12 +1,12 @@
-export class MiniHeap {
-  heap: number[];
+export class MiniHeap<T> {
+  heap: T[];
   constructor() {
     this.heap = [];
   }
   swap(i1: number, i2: number) {
     [this.heap[i1], this.heap[i2]] = [this.heap[i2], this.heap[i1]];
   }
-  insert(value: number) {
+  insert(value: T) {
     this.heap.push(value);
     this.shiftUp(this.heap.length - 1);
   }
@@ -18,7 +18,7 @@ export class MiniHeap {
     }
   }
   pop() {
-    this.heap[0] = this.heap.pop() as number;
+    this.heap[0] = this.heap.pop() as T;
     this.shiftDown(0);
   }
   shiftDown(index: number) {
