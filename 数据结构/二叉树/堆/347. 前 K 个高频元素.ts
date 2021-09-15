@@ -7,12 +7,12 @@
 //   return list.slice(0, k).map((n) => n[0]);
 // }
 
-interface n {
+export interface n {
     value: number;
     key: number
 }
 
-class MiniHeap {
+export class MiniHeap {
   heap: n[];
   constructor() {
     this.heap = [];
