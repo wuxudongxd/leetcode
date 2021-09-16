@@ -1,3 +1,6 @@
+/**
+ * 冒泡排序
+ */
 export function bubbleSort(arr: number[]): number[] {
   const array = Array.from(arr);
   for (let i = 0; i < array.length - 1; i++) {
