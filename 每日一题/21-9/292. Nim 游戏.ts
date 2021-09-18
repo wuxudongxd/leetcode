@@ -1,3 +1,3 @@
 function canWinNim(n: number): boolean {
-  return n % 4 == 0 ? false : true;
+   return n % 4 != 0;
 }
