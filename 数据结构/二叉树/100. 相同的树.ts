@@ -1,6 +1,6 @@
 import { TreeNode } from "./binaryTree";
 
-function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
+export function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
   if (p === null && q === null) return true;
   if (p === null || q === null) return false;
   return (
