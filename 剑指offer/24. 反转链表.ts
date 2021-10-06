@@ -1,4 +1,4 @@
-import { ListNode } from './linkedList';
+import { ListNode } from '../数据结构/链表/linkedList';
 
 export function reverseList(head: ListNode | null): ListNode | null {
   let pre: ListNode | null = null;
