@@ -2,4 +2,9 @@
 . "$(dirname "$0")/_/husky.sh"
 
 # lint & format before git commit
-npm run readme && npm run pre-commit
+# 生成README.md
+npm run readme && 
+# README.md 加入缓冲区
+git add README.md && 
+# 运行lint和format
+npm run pre-commit
