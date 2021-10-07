@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/prefer-for-of */
 /**
  * 链表节点的基本结构
  */
 export class ListNode {
-  val: number;
-  next: ListNode | null;
-  constructor(val?: number, next?: ListNode | null) {
+  public val: number;
+  public next: ListNode | null;
+  public constructor(val?: number, next?: ListNode | null) {
     this.val = val === undefined ? 0 : val;
     this.next = next === undefined ? null : next;
   }
@@ -37,7 +38,7 @@ export function createNode(arr: number[]): ListNode | null {
  */
 export function printNode(head: ListNode | null): void {
   if (head === null) {
-    console.log("空链表");
+    console.log('空链表');
   } else {
     let tempNode: ListNode = head;
     console.log(tempNode.val);
@@ -54,9 +55,9 @@ export function printNode(head: ListNode | null): void {
  * @returns 反转后链表的头结点，输入的head结点在反转后处在链表末尾，next指向null
  */
 export function reverse(head: ListNode | null): ListNode | null {
-  let pre: ListNode | null = null,
-    cur: ListNode | null = head,
-    next: ListNode | null = null;
+  let pre: ListNode | null = null;
+  let cur: ListNode | null = head;
+  let next: ListNode | null = null;
   while (cur !== null) {
     next = cur.next;
     cur.next = pre;

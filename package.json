@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "prepare": "husky install",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "readme": "ts-node ./scripts/scan.ts "
   },
   "config": {
     "commitizen": {
@@ -15,6 +16,7 @@
     }
   },
   "devDependencies": {
+    "@types/node": "^16.10.3",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "commitizen": "^4.2.4",
@@ -24,6 +26,7 @@
     "husky": "^7.0.0",
     "lint-staged": "^11.2.0",
     "prettier": "^2.4.1",
+    "ts-node": "^10.2.1",
     "typescript": "^4.4.3"
   }
 }

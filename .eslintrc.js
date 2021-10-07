@@ -4,6 +4,6 @@ module.exports = {
     node: true,
   },
   globals: {},
-  ignorePatterns: ['.lintstagedrc.json', '.prettierrc.js', '.vscode/*', 'package.json'],
+  ignorePatterns: ['.lintstagedrc.json', '.prettierrc.js', '.vscode/*', 'package.json', 'tsconfig.json'],
   rules: {},
 };
