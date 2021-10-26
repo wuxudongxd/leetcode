@@ -1,50 +1,53 @@
-export class MiniHeap<T> {
-  heap: T[];
-  constructor() {
+export class Heap<T> {
+  private heap: T[];
+  private comparer: Function;
+  public constructor(prop: 'min' | 'max') {
     this.heap = [];
+    switch (prop) {
+      case 'min':
+        this.comparer = (x: number, y: number) => x < y;
+        break;
+      case 'max':
+        this.comparer = (x: number, y: number) => x > y;
+        break;
+      default:
+        throw new Error('prop should be min or max');
+    }
   }
-  swap(i1: number, i2: number) {
+  public swap(i1: number, i2: number) {
     [this.heap[i1], this.heap[i2]] = [this.heap[i2], this.heap[i1]];
   }
-  insert(value: T) {
+  public insert(value: T) {
     this.heap.push(value);
     this.shiftUp(this.heap.length - 1);
   }
-  shiftUp(index: number) {
+  public shiftUp(index: number) {
     const parentIndex = (index - 1) >> 1;
-    if (this.heap[parentIndex] > this.heap[index]) {
+    if (this.comparer(this.heap[index], this.heap[parentIndex])) {
       this.swap(parentIndex, index);
       this.shiftUp(parentIndex);
     }
   }
-  pop() {
+  public pop() {
     this.heap[0] = this.heap.pop() as T;
     this.shiftDown(0);
   }
-  shiftDown(index: number) {
+  public shiftDown(index: number) {
     const leftIndex = index * 2 + 1;
     const rightIndex = index * 2 + 2;
-    if (this.heap[leftIndex] < this.heap[index]) {
+    if (this.comparer(this.heap[leftIndex], this.heap[index])) {
       this.swap(leftIndex, index);
       this.shiftDown(leftIndex);
     }
-    if (this.heap[rightIndex] < this.heap[index]) {
+    if (this.comparer(this.heap[rightIndex], this.heap[index])) {
       this.swap(rightIndex, index);
       this.shiftDown(rightIndex);
     }
   }
-  peek() {
+  public peek() {
     return this.heap[0];
   }
-  size() {
+  public size() {
     return this.heap.length;
   }
 }
-
-// test
-const h = new MiniHeap();
-h.insert(3);
-h.insert(2);
-h.insert(1);
-h.pop();
-console.log(h);
