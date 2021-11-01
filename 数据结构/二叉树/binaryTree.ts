@@ -2,10 +2,10 @@
  * 二叉树的基本结构
  */
 export class TreeNode {
-  val: number;
-  left: TreeNode | null;
-  right: TreeNode | null;
-  constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+  public val: number;
+  public left: TreeNode | null;
+  public right: TreeNode | null;
+  public constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
     this.val = val === undefined ? 0 : val;
     this.left = left === undefined ? null : left;
     this.right = right === undefined ? null : right;
@@ -85,19 +85,19 @@ export function preorderTraversal(root: TreeNode | null): number[] {
   if (!root) return printArr;
   const stack: stackNode[] = [];
   stack.push({
-    color: "white",
+    color: 'white',
     node: root,
   });
 
   while (stack.length > 0) {
     const { color, node } = stack.pop() as stackNode;
-    if (color === "gray") {
+    if (color === 'gray') {
       printArr.push(node.val);
     } else {
       // 前序遍历
-      node.right && stack.push({ color: "white", node: node.right });
-      node.left && stack.push({ color: "white", node: node.left });
-      stack.push({ color: "gray", node });
+      node.right && stack.push({ color: 'white', node: node.right });
+      node.left && stack.push({ color: 'white', node: node.left });
+      stack.push({ color: 'gray', node });
 
       // 中序遍历
       // node.right && stack.push({ color: "white", node: node.right });
@@ -136,7 +136,6 @@ export function levelOrder(root: TreeNode | null): number[][] {
   }
   return res;
 }
-
 
 /**
  * "自顶向下"的伪代码(先序遍历)
