@@ -1,4 +1,4 @@
-import { TreeNode } from "./binaryTree";
+import { TreeNode } from './binaryTree';
 
 export function levelOrder(root: TreeNode | null): number[][] {
   if (!root) return [];
@@ -8,7 +8,7 @@ export function levelOrder(root: TreeNode | null): number[][] {
     let n = queue.length;
     const level: number[] = [];
     for (let i = 0; i < n; i++) {
-      let node: TreeNode = queue.pop();
+      let node: TreeNode = queue.pop() as TreeNode;
       level.push(node.val);
       if (node.left) queue.unshift(node.left);
       if (node.right) queue.unshift(node.right);
