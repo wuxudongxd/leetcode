@@ -1,5 +1,5 @@
 function permute(nums: number[]): number[][] {
-  const res = [];
+  const res: number[][] = [];
   const backtrack = (path: number[]) => {
     if (path.length === nums.length) {
       res.push(path);
