@@ -1,10 +1,7 @@
-/**
- * 归并排序
- */
-export function mergeSort(arr: number[]): number[] {
-  const array = Array.from(arr);
+function reversePairs(nums: number[]): number {
+  let count = 0;
   const rec = (array: number[]): number[] => {
-    if (array.length === 1) return array;
+    if (array.length <= 1) return array;
     const mid = Math.floor(array.length / 2);
     const left = array.slice(0, mid);
     const right = array.slice(mid, array.length);
@@ -13,7 +10,13 @@ export function mergeSort(arr: number[]): number[] {
     const res: number[] = [];
     while (orderLeft.length || orderRight.length) {
       if (orderLeft.length && orderRight.length) {
-        res.push(orderLeft[0] < orderRight[0] ? (orderLeft.shift() as number) : (orderRight.shift() as number));
+        // res.push(orderLeft[0] < orderRight[0] ? (orderLeft.shift() as number) : (orderRight.shift() as number));
+        if (orderLeft[0] <= orderRight[0]) {
+          res.push(orderLeft.shift() as number);
+        } else {
+          count += orderLeft.length;
+          res.push(orderRight.shift() as number);
+        }
       } else if (orderLeft.length) {
         res.push(orderLeft.shift() as number);
       } else if (orderRight.length) {
@@ -22,8 +25,9 @@ export function mergeSort(arr: number[]): number[] {
     }
     return res;
   };
-  return rec(array);
+  rec(Array.from(nums));
+  return count;
 }
 
 // test
-console.log(mergeSort([5, 4, 3, 2, 1]));
+reversePairs([]);
