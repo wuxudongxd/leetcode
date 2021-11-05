@@ -17,7 +17,7 @@ function twoSum(nums: number[], target: number): number[] {
 /**
  *  双指针
  */
-function twoSum(nums: number[], target: number): number[] {
+export function twoSum(nums: number[], target: number): number[] {
   let i = 0;
   let j = nums.length - 1;
   while (i < j) {
