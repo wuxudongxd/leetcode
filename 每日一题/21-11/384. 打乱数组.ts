@@ -1,7 +1,7 @@
 /**
  * 洗牌算法
  */
-class Solution {
+export class Solution {
   public ans: number[] = [];
   public original: number[] = [];
   public constructor(nums: number[]) {
