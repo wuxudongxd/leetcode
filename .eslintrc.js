@@ -5,5 +5,7 @@ module.exports = {
   },
   globals: {},
   ignorePatterns: ['.lintstagedrc.json', '.prettierrc.js', '.vscode/*', 'package.json', 'tsconfig.json'],
-  rules: {},
+  rules: {
+    '@typescript-eslint/explicit-member-accessibility': 'off',
+  },
 };
