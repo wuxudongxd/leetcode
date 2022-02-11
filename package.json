@@ -16,7 +16,7 @@
     }
   },
   "devDependencies": {
-    "@types/node": "16.11.21",
+    "@types/node": "16.11.24",
     "@typescript-eslint/eslint-plugin": "5.11.0",
     "@typescript-eslint/parser": "5.11.0",
     "commitizen": "4.2.4",
