@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const fileArr: string[] = ['剑指offer', '每日一题', '数据结构', '算法'];
+const fileArr: string[] = ['剑指offer', '每日一题', '数据结构', '算法', 'hot100'];
 const basePath = path.resolve(__dirname, '../');
 const basePathDir = getDirName(basePath);
 const README_FILE = path.resolve(basePath, 'README.md');
