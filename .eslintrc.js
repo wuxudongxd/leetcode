@@ -8,5 +8,6 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-member-accessibility': 'off',
     'max-params': 'off',
+    '@typescript-eslint/prefer-for-of': 'off',
   },
 };
