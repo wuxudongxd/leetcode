@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 function letterCombinations(digits: string): string[] {
   const map = [...new Array(8).keys()].map((num) => {
     const base = num * 3;
