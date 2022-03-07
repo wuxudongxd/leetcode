@@ -1,7 +1,7 @@
 // 寻找一个数（基本的二分搜索）
 export function binarySearch(nums: number[], target: number) {
-  let left = 0,
-    right = nums.length - 1;
+  let left = 0;
+  let right = nums.length - 1;
   while (left <= right) {
     let mid = left + ~~((right - left) / 2);
     if (nums[mid] === target) {
@@ -17,8 +17,8 @@ export function binarySearch(nums: number[], target: number) {
 
 // 寻找左侧边界的二分搜索
 export function leftBinarySearch(nums: number[], target: number) {
-  let left = 0,
-    right = nums.length - 1;
+  let left = 0;
+  let right = nums.length - 1;
   while (left <= right) {
     let mid = left + ~~((right - left) / 2);
     if (nums[mid] === target) {
@@ -33,11 +33,10 @@ export function leftBinarySearch(nums: number[], target: number) {
   return nums[left] !== target ? -1 : left;
 }
 
-
 // 寻找右侧边界的二分搜索
 export function rightBinarySearch(nums: number[], target: number) {
-  let left = 0,
-    right = nums.length - 1;
+  let left = 0;
+  let right = nums.length - 1;
   while (left <= right) {
     let mid = left + ~~((right - left) / 2);
     if (nums[mid] === target) {
