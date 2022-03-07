@@ -2,15 +2,18 @@
  * 双指针法
  */
 export function removeDuplicates(nums: number[]): number {
-  if (nums.length == 0) return 0;
+  if (nums.length === 0) return 0;
   let left = 0;
-  for (let right = 1; right < nums.length; right++) {
+  let right = 1;
+  while (right < nums.length) {
     if (nums[left] !== nums[right]) {
-      nums[++left] = nums[right];
+      nums[left + 1] = nums[right];
+      left++;
     }
+    right++;
   }
   // 下标+1
-  return ++left;
+  return left + 1;
 }
 
 /**
